@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.input {
+  width: 100%;
+  padding: 6px;
+  font-size: 16px;
+  border: 1px solid $primary-color;
+  border-radius: 4px;
+
+  &__placeholder {
+    position: absolute;
+    padding: 6px;
+    font-size: 16px;
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba($primary-color, 0.2);
+
+    & .input__placeholder {
+      padding: 0;
+    }
+  }
+
+  &--isValid {
+    border-color: $success-color;
+
+    &:focus-visible {
+      outline: 3px solid rgba($success-color, 0.2);
+    }
+  }
+
+  &--isNotValid {
+    border-color: $error-color;
+
+    &:focus-visible {
+      outline: 3px solid rgba($error-color, 0.2);
+    }
+  }
+
+  &__box {
+    position: relative;
+  }
+}
