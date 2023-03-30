@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/authorization-form/static/css/main.cdfe504f.css",
+    "main.js": "/authorization-form/static/js/main.d2bb85b0.js",
+    "index.html": "/authorization-form/index.html",
+    "main.cdfe504f.css.map": "/authorization-form/static/css/main.cdfe504f.css.map",
+    "main.d2bb85b0.js.map": "/authorization-form/static/js/main.d2bb85b0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdfe504f.css",
+    "static/js/main.d2bb85b0.js"
+  ]
+}
