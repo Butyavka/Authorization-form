@@ -1,7 +1,7 @@
 {
   "name": "authorization-form",
   "version": "0.1.0",
-  "homepage": "https://butyavka.github.io/authorization-form",
+  "homepage": "https://butyavka.github.io/Authorization-form/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

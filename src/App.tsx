@@ -1,10 +1,10 @@
 import React from 'react'
 import './styles/root.scss'
-import RegistrationPage from './pages/RegistrationPage'
+import AuthorizationForm from './components/AuthorizationForm'
 
 function App() {
   return (
-    <RegistrationPage/>
+    <AuthorizationForm header="Authorization form"/>
   )
 }
 

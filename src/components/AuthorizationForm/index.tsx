@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, FC } from 'react'
 import Form from '../../components/Form'
 import './style.scss'
 import Input from '../../components/Input'
@@ -9,7 +9,11 @@ import useInput from '../../hooks/useInput'
 
 const b = block('registration')
 
-const RegistrationPage = () => {
+interface IAuthorizationForm {
+  header?: string;
+}
+
+const AuthorizationForm: FC<IAuthorizationForm> = ({ header }) => {
   const [ isValid, setValid ] = useState(false)
   const email = useInput('', { [VALIDATIONS.IS_EMPTY]: true, [VALIDATIONS.EMAIL]: true })
   const password = useInput('', {
@@ -36,8 +40,8 @@ const RegistrationPage = () => {
 
   return (
     <div className={ b('container').mix('container') }>
-      <header className="header" >My form</header>
-      <Form className={ b('form') } id="registration-form" onSubmit={ handlerSubmitForm }>
+      {header && <div className="header" >{header}</div>}
+      <Form id="authorization-form" onSubmit={ handlerSubmitForm }>
         <Input
           error={ email.isDirty ? email.errors[0] : undefined }
           value={ email.value }
@@ -54,10 +58,10 @@ const RegistrationPage = () => {
           placeholder="Password"
           onBlur={ password.onBlur }
         />
-        <Button disabled={ !isValid } text="registration" type="submit" className={ b('button') }/>
+        <Button disabled={ !isValid } text="authorization" type="submit" className={ b('button') }/>
       </Form>
     </div>
   )
 }
 
-export default RegistrationPage
+export default AuthorizationForm

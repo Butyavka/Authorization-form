@@ -1,8 +1,11 @@
-import React, { useState, FocusEvent } from 'react'
+import React, { useState, FocusEvent, MouseEvent } from 'react'
 import './style.scss'
 import { ERRORS } from '../../constants/inputs'
-import { IInput } from '../../types/inputs'
+import { IInput, INPUTS } from '../../types/inputs'
 import { block } from '../../helpers/bem'
+import Button from '../Button'
+import { ReactComponent as Visibility } from '../../assets/icon/visibility-fill.svg'
+import { ReactComponent as Invisibility } from '../../assets/icon/invisibility-fill.svg'
 
 const b = block('input')
 
@@ -16,6 +19,7 @@ const Input: React.FC<IInput> = ({
   onBlur,
 }) => {
   const [ isDirty, setDirty ] = useState(false)
+  const [ showPassword, setShowPassword ] = useState(false)
   const isValid = !error && isDirty
   const isNotValid = error && isDirty
 
@@ -24,19 +28,30 @@ const Input: React.FC<IInput> = ({
     setDirty(true)
   }
 
+  const changeShowPassword = (event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation()
+    setShowPassword(!showPassword)
+  }
+
   return (
     <div className={ b('box') }>
-      {/*<span className={ b('placeholder') }>{placeholder}</span>*/}
       {error && <div className={b('error')}>{ERRORS[error]}</div>}
       <input
         className={ b({ isValid, isNotValid }) }
-        type={ type }
+        type={ showPassword ? 'text' : type }
         value={ value }
         placeholder={ placeholder }
         onChange={ onChange }
-        onBlur={ event => handlerBlur(event) }
+        onBlur={ handlerBlur }
         defaultValue={ defaultValue }
       />
+      {type === INPUTS.PASSWORD && (
+        <Button
+          onClick={ changeShowPassword }
+          className={ b('button') }
+          icon={ showPassword ? <Visibility/> : <Invisibility/> }
+        />
+      )}
     </div>
   )
 }
