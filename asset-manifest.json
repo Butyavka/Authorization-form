@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/authorization-form/static/css/main.cdfe504f.css",
-    "main.js": "/authorization-form/static/js/main.d2bb85b0.js",
-    "index.html": "/authorization-form/index.html",
-    "main.cdfe504f.css.map": "/authorization-form/static/css/main.cdfe504f.css.map",
-    "main.d2bb85b0.js.map": "/authorization-form/static/js/main.d2bb85b0.js.map"
+    "main.css": "/Authorization-form/static/css/main.225be29e.css",
+    "main.js": "/Authorization-form/static/js/main.0b692d98.js",
+    "static/media/invisibility-fill.svg": "/Authorization-form/static/media/invisibility-fill.8bc51f3d90c70d1458919f22ea9088d6.svg",
+    "index.html": "/Authorization-form/index.html",
+    "static/media/visibility-fill.svg": "/Authorization-form/static/media/visibility-fill.d184bdc95d6724a4aa0009b462f130a1.svg",
+    "main.225be29e.css.map": "/Authorization-form/static/css/main.225be29e.css.map",
+    "main.0b692d98.js.map": "/Authorization-form/static/js/main.0b692d98.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdfe504f.css",
-    "static/js/main.d2bb85b0.js"
+    "static/css/main.225be29e.css",
+    "static/js/main.0b692d98.js"
   ]
 }
