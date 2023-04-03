@@ -1,11 +1,12 @@
 import React, { useState, FocusEvent, MouseEvent } from 'react'
 import './style.scss'
-import { ERRORS } from '../../constants/inputs'
-import { IInput, INPUTS } from '../../types/inputs'
-import { block } from '../../helpers/bem'
+import { ERRORS } from '../../../constants/inputs'
+import { IInput, INPUTS } from '../../../types/inputs'
+import { block } from '../../../helpers/bem'
 import Button from '../Button'
-import { ReactComponent as Visibility } from '../../assets/icon/visibility-fill.svg'
-import { ReactComponent as Invisibility } from '../../assets/icon/invisibility-fill.svg'
+import { ReactComponent as Visibility } from '../../../assets/icon/visibility-fill.svg'
+import { ReactComponent as Invisibility } from '../../../assets/icon/invisibility-fill.svg'
+import ErrorWrapper from '../ErrorWrapper'
 
 const b = block('input')
 
@@ -34,8 +35,7 @@ const Input: React.FC<IInput> = ({
   }
 
   return (
-    <div className={ b('box') }>
-      {error && <div className={b('error')}>{ERRORS[error]}</div>}
+    <ErrorWrapper error={ error && ERRORS[error] }>
       <input
         className={ b({ isValid, isNotValid }) }
         type={ showPassword ? 'text' : type }
@@ -52,7 +52,7 @@ const Input: React.FC<IInput> = ({
           icon={ showPassword ? <Visibility/> : <Invisibility/> }
         />
       )}
-    </div>
+    </ErrorWrapper>
   )
 }
 

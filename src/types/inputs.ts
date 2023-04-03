@@ -2,10 +2,11 @@ import { ChangeEvent, FocusEvent } from 'react'
 
 enum INPUTS {
     EMAIL = 'EMAIL',
-    PASSWORD = 'PASSWORD'
+    PASSWORD = 'PASSWORD',
+    TEXT = 'TEXT'
 }
 
-type InputType = INPUTS.EMAIL | INPUTS.PASSWORD
+type InputType = INPUTS.EMAIL | INPUTS.PASSWORD | INPUTS.TEXT
 
 enum VALIDATIONS {
     IS_EMPTY = 'isEmpty',

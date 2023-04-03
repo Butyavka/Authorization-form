@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import './style.scss'
-import { block } from '../../helpers/bem'
+import { block } from '../../../helpers/bem'
 
 interface IButton {
     text?: string;

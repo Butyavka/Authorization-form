@@ -1,0 +1,20 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  &__container {
+    width: 500px;
+    padding: 30px 40px;
+    margin: 80px auto 0;
+    background-color: rgba(white, 0.9);
+    border-radius: 20px;
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+  }
+}

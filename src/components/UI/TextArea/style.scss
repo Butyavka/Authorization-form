@@ -1,0 +1,14 @@
+@import "../../../styles/variables";
+
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 6px;
+  font-size: 16px;
+  border: 1px solid $primary-color;
+  border-radius: 4px;
+
+  &:focus-visible {
+    outline: 3px solid rgba($primary-color, 0.2);
+  }
+}

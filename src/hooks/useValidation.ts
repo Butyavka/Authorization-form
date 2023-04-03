@@ -3,7 +3,7 @@ import { VALIDATIONS, Validations } from '../types/inputs'
 import { REGEXPS } from '../constants/regexps'
 
 export default (value: string, validations: Validations) => {
-  const [ isEmpty, setEmpty ] = useState(true)
+  const [ isEmpty, setEmpty ] = useState(false)
   const [ minLength, setMinLength ] = useState(false)
   const [ maxLength, setMaxLength ] = useState(false)
   const [ email, setEmail ] = useState(false)
