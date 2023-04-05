@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+
+.error-wrapper {
+  position: relative;
+  margin-top: 20px;
+
+  &__error {
+    position: absolute;
+    top: -20px;
+    font-size: 14px;
+    color: $warning-color
+  }
+}

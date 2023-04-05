@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "../../../styles/variables";
 
 .input {
   width: 100%;
@@ -35,18 +35,6 @@
     &:focus-visible {
       outline: 3px solid rgba($error-color, 0.2);
     }
-  }
-
-  &__box {
-    position: relative;
-    margin-top: 20px;
-  }
-
-  &__error {
-    position: absolute;
-    top: -20px;
-    font-size: 14px;
-    color: $warning-color
   }
 
   &__button.button {
