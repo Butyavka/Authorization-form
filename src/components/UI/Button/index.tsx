@@ -1,15 +1,7 @@
-import React, { ReactNode } from 'react'
+import React, { memo } from 'react'
 import './style.scss'
 import { block } from '../../../helpers/bem'
-
-interface IButton {
-    text?: string;
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    className?: string;
-    type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
-    disabled?: boolean;
-    icon?: ReactNode
-}
+import { IButton } from '../../../types/button'
 
 const b = block('button')
 
@@ -34,4 +26,4 @@ const Button: React.FC<IButton> = ({
   )
 }
 
-export default Button
+export default memo(Button)

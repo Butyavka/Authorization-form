@@ -6,7 +6,7 @@ export default (initialValue: string, validations: Validations = {}) => {
   const [ value, setValue ] = useState(initialValue)
   const [ isDirty, setDirty ] = useState(false)
   const validate = useValidation(value, validations)
-  const errors = isDirty ? Object.keys(validate).filter(item => validate[item as keyof boolean]) : []
+  const errors = Object.keys(validate).filter(item => validate[item as keyof boolean])
 
   const onChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
     setValue(event.target.value)
