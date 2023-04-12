@@ -1,12 +1,10 @@
-import React, { useState, FocusEvent, MouseEvent } from 'react'
+import React, { useState, FocusEvent, ChangeEvent } from 'react'
 import './style.scss'
 import { ERRORS } from '../../../constants/inputs'
 import { IInput, INPUTS } from '../../../types/inputs'
 import { block } from '../../../helpers/bem'
-import Button from '../Button'
-import { ReactComponent as Visibility } from '../../../assets/icon/visibility-fill.svg'
-import { ReactComponent as Invisibility } from '../../../assets/icon/invisibility-fill.svg'
 import ErrorWrapper from '../ErrorWrapper'
+import VisibilityCheckbox from '../VisibilityCheckbox'
 
 const b = block('input')
 
@@ -29,8 +27,9 @@ const Input: React.FC<IInput> = ({
     setDirty(true)
   }
 
-  const changeShowPassword = (event: MouseEvent<HTMLButtonElement>) => {
+  const changeShowPassword = (event: ChangeEvent<HTMLInputElement>) => {
     event.stopPropagation()
+
     setShowPassword(!showPassword)
   }
 
@@ -46,11 +45,7 @@ const Input: React.FC<IInput> = ({
         defaultValue={ defaultValue }
       />
       {type === INPUTS.PASSWORD && (
-        <Button
-          onClick={ changeShowPassword }
-          className={ b('button') }
-          icon={ showPassword ? <Visibility/> : <Invisibility/> }
-        />
+        <VisibilityCheckbox onChange={ changeShowPassword } checked={ showPassword }/>
       )}
     </ErrorWrapper>
   )

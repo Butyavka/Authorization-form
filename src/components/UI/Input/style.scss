@@ -7,18 +7,8 @@
   border: 1px solid $primary-color;
   border-radius: 4px;
 
-  &__placeholder {
-    position: absolute;
-    padding: 6px;
-    font-size: 16px;
-  }
-
   &:focus-visible {
     outline: 3px solid rgba($primary-color, 0.2);
-
-    & .input__placeholder {
-      padding: 0;
-    }
   }
 
   &--isValid {
@@ -34,21 +24,6 @@
 
     &:focus-visible {
       outline: 3px solid rgba($error-color, 0.2);
-    }
-  }
-
-  &__button.button {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    padding: 0;
-    background-color: transparent;
-
-    & svg {
-      display: block;
-      width: 20px;
-      fill: hotpink;
     }
   }
 }

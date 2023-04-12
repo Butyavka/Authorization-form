@@ -1,0 +1,22 @@
+@import 'src/styles/variables';
+
+.visibility-checkbox {
+  display: none;
+
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__icon {
+    display: block;
+    width: 20px;
+    fill: hotpink;
+  }
+}
